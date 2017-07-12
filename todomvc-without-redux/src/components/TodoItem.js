@@ -10,12 +10,12 @@ class TodoItem extends React.Component {
     console.log('*********this.props.isDone:' + this.props.isDone)
     let isDone = !this.props.isDone
     console.log('*********Now this.props.isDone:' + isDone)
-    this.props.changeTodoState(this.props.index, isDone);
+    this.props.changeTodoState(this.props.index, isDone, false);
   }
 
   handleClick() {
     console.log('******删除任务*******')
-    this.props.deleteTodo(this.props.index)
+    this.props.deleteTodo(this.props.index, false)
   }
 
   onmouseenter() {
@@ -32,7 +32,7 @@ class TodoItem extends React.Component {
     let className = this.props.isDone ? 'task-done' : ''
     return (
       <li onMouseEnter={this.onmouseenter.bind(this)} onMouseLeave={this.onmouseleave.bind(this)}>
-        <Checkbox onChange={this.handleChange.bind(this)}>
+        <Checkbox checked={this.props.isDone} onChange={this.handleChange.bind(this)}>
           <span>{this.props.time}&nbsp;&nbsp;</span>
           <span className={className}>
             {this.props.text}
