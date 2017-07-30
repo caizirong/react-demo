@@ -1,0 +1,7 @@
+#app {
+  width: 600px;
+  margin: 0 auto;
+}
+.task-done {
+  text-decoration: line-through
+}
