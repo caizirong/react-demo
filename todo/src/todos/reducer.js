@@ -10,7 +10,7 @@ export default (state = [], action) => {
         },
         ...state
       ]
-    case TOGGLE_TODO: {
+    case TOGGLE_TODO: 
       return state.map((todoItem) => {
         if (todoItem.id === action.id) {
           return { ...todoItem, completed: !todoItem.completed }
@@ -18,13 +18,12 @@ export default (state = [], action) => {
           return todoItem
         }
       })
-    }
-      break;
-    case REMOVE_TODO: {
+    
+    case REMOVE_TODO: 
       return state.filter((todoItem) => {
         return todoItem.id !== action.id;
       })
-    }
+    
     default:
       return state;
   }
